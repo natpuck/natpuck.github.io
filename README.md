@@ -28,9 +28,9 @@
 An application created for the lens testing team at OptiTrack that takes an image and identifies and grades the relevant lens' quality by examining how circular the markers are.
 
 <img alt="Lens Tool - Full App - Zoom View" src="https://raw.githubusercontent.com/natpuck/natpuck.github.io/refs/heads/main/lens_app_screenshot.png" />
-Alt text: Full view of the application using zoom view and displaying focus and lens statistics.
+**Alt text:** Full view of the application using zoom view and displaying focus and lens statistics.
 
-The program the lens testing team currently uses is intended for direct motion capture usage and is therefore much more technically complex than what's required for basic lens testing. Our program is intended to be a lightweight and easy to use solution for the team, who'll experience the same functionality, but in a much more streamlined way.
+<br>The program the lens testing team currently uses is intended for direct motion capture usage and is therefore much more technically complex than what's required for basic lens testing. Our program is intended to be a lightweight and easy to use solution for the team, who'll experience the same functionality, but in a much more streamlined way.
 
 <!-- KEY FEATURES -->
 # Key Features
