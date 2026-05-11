@@ -2,7 +2,7 @@
 <details>
  <summary>Table of Contents</summary>
  <ol>
-   <li><a href="#description">Description</a></li>
+   <li><a href="#production-lens-validation-tool">Production Lens Validation Tool</a></li>
    <li><a href="#key-features">Key Features</a></li>
    <li><a href="#our-team">Our Team</a></li>
    <li>
@@ -15,7 +15,13 @@
                 <li><a href="#installation">Installation</a></li>
               </ul>
         </li>
-        <li><a href="#ubuntu-build-instructions">Ubuntu Build Instructions</a></li>
+        <li>
+          <a href="#ubuntu-build-instructions">Ubuntu Build Instructions</a>
+             <ul>
+                <li><a href="#dependencies-1">Dependencies</a></li>
+                <li><a href="#installation-1">Installation</a></li>
+             </ul>
+        </li>
      </ul>
    </li>
    <li><a href="#license">License</a></li>
@@ -24,13 +30,13 @@
 
 
 <!-- PROJECT -->
-# Description
+# Production Lens Validation Tool
 An application created for the lens testing team at OptiTrack that takes an image and identifies and grades the relevant lens' quality by examining how circular the markers are.
 
-<img alt="Lens Tool - Full App - Zoom View" src="https://raw.githubusercontent.com/natpuck/natpuck.github.io/refs/heads/main/lens_app_screenshot.png" />
+<img width="1920" height="1080" alt="Lens Tool - Full App - Zoom View" src="https://github.com/natpuck/natpuck.github.io/blob/main/lens_app_screenshot.png" />
 **Alt text:** Full view of the application using zoom view and displaying focus and lens statistics.
 
-<br>The program the lens testing team currently uses is intended for direct motion capture usage and is therefore much more technically complex than what's required for basic lens testing. Our program is intended to be a lightweight and easy to use solution for the team, who'll experience the same functionality, but in a much more streamlined way.
+The program the lens testing team currently uses is intended for direct motion capture usage and is therefore much more technically complex than what's required for basic lens testing. Our program is intended to be a lightweight and easy to use solution for the team, who'll experience the same functionality, but in a much more streamlined way.
 
 <!-- KEY FEATURES -->
 # Key Features
@@ -53,9 +59,8 @@ An application created for the lens testing team at OptiTrack that takes an imag
 
 ## Windows Build Instructions
 
-<!-- DEPENDECIES -->
-### Dependecies
-
+<!-- DEPENDENCIES -->
+### Dependencies
 
 * [Qt](https://www.qt.io/download-dev) 6.10.0 (Important: select the `msvc2022_64` component during installation)
 * [OpenCV](https://opencv.org/releases/) 4.12.0
@@ -63,44 +68,65 @@ An application created for the lens testing team at OptiTrack that takes an imag
 * [Cmake](https://cmake.org/download/) 4.1.2
 
 
-
+<!-- INSTALLATION -->
 ### Installation
-1. **Clone** [this repository](https://github.com/OptiTrack/Production-Lens-Validation). *⚠️Avoid placing it too deep in your file system; Windows max-path issues can break the build script.*
+
+1. **Clone** this repository. *⚠️Avoid placing it too deep in your file system; Windows max-path issues can break the build script.*
 2. **Set environment variables (configure-time only)** 
-  - `OPENCV_DIR = ..\opencv\build`
-  - `OPENCV_BIN_DIR = ..\opencv\build\bin`
-  - `Qt6_DIR = ..\Qt\6.10.0\msvc2022_64\lib\cmake\Qt6` 
-  - `QT_PLUGIN_PATH = ..\Qt\6.10.0\msvc2022_64\plugins` *Avoid setting `QT_PLUGIN_PATH` globally; deployment handles plugins.*
+     - `OPENCV_DIR = ..\opencv\build`
+     - `OPENCV_BIN_DIR = ..\opencv\build\bin`
+     - `Qt6_DIR = ..\Qt\6.10.0\msvc2022_64\lib\cmake\Qt6` 
+     - `QT_PLUGIN_PATH = ..\Qt\6.10.0\msvc2022_64\plugins` *Avoid setting `QT_PLUGIN_PATH` globally; deployment handles plugins.*
 3. **Build** using the provided script: 
-  `..\Production-Lens-Validation\CameraViewerApp\winBuild.bat` Example:*`./WinBuild.bat <CameraSDK_PATH>`*
-4. Your executable will be located at `..\Production-Lens-Validation\CameraViewerApp\build\Release\CameraViewerApp.exe`.
+     ```
+     ..\Production-Lens-Validation\CameraViewerApp\winBuild.bat
+     ```
+     Example:*`./WinBuild.bat <CameraSDK_PATH>`*
+5. Your executable will be located at `..\Production-Lens-Validation\CameraViewerApp\build\Release\CameraViewerApp.exe`.
 
 
 ## Ubuntu Build Instructions
 
-1. Install Dependencies
-<br>`sudo apt update && sudo apt install -y cmake git build-essential`
-<br>`qt6-base-dev qt6-base-private-dev qt6-tools-dev qt6-svg-dev`
-<br>`libgl1-mesa-dev libjpeg-dev libopencv-dev python3-opencv`
+<!-- DEPENDENCIES -->
+### Dependencies
 
-2. Clone Repository
+1. Install Dependencies:
+   ```
+   sudo apt update && sudo apt install -y cmake git build-essential
+   qt6-base-dev qt6-base-private-dev qt6-tools-dev qt6-svg-dev
+   libgl1-mesa-dev libjpeg-dev libopencv-dev python3-opencv
+   ```
+
+
+<!-- INSTALLATION -->
+### Installation
+
+1. Clone Repository
 <br>Navigate to the directory where you want the project, then run:
-<br>`git clone https://github.com/fuzzylogic88/Production-Lens-Validation.git`
-<br>`cd Production-Lens-Validation`
+    ```
+    git clone https://github.com/fuzzylogic88/Production-Lens-Validation.git
+    cd Production-Lens-Validation
+    ```
 
-3. Build Project
-<br>`chmod +x build.sh`
-<br>`./build.sh ../OptiTrack_Camera_SDK_3.4.1_Final_Ubuntu`
+2. Build Project
+   ```
+   chmod +x build.sh
+   ./build.sh ../OptiTrack_Camera_SDK_3.4.1_Final_Ubuntu
+   ```
 
-4. (Optional) Enable color camera support (FFmpeg)
-<br>Install FFmpeg:
-<br>`sudo apt install -y ffmpeg`
-<br>Build with FFmpeg support:
-<br>`./linuxBuild.sh ../CameraSDK --ffmpeg`
+3. (Optional) Enable color camera support (FFmpeg)
+    - Install FFmpeg:
+       ```
+       sudo apt install -y ffmpeg
+       ```
+    - Build with FFmpeg support:
+       ```
+       ./linuxBuild.sh ../CameraSDK --ffmpeg
+       ```
 
 5. Configure network (required)
 <br>Set the camera network interface to Link-Local Only:
-<br>Settings → Network → Wired (camera port) → IPv4 → IPv4 Method → Link-Local Only
+<br>`Settings → Network → Wired (camera port) → IPv4 → IPv4 Method → Link-Local Only`
 
 6. Run application
 <br>`./build/CameraViewerApp`
@@ -108,7 +134,6 @@ An application created for the lens testing team at OptiTrack that takes an imag
 
 <!-- LICENSE -->
 # License
-
 
 Distributed under the GNU LESSER GENERAL PUBLIC LICENSE License.
 See `LICENSE.txt` in the "licenses" folder for more information.
