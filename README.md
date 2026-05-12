@@ -36,7 +36,7 @@ An application created for the lens testing team at OptiTrack that takes an imag
 <img alt="Lens Tool - Full App - Zoom View" src="https://raw.githubusercontent.com/natpuck/natpuck.github.io/refs/heads/main/lens_app_screenshot.png" />
 **Alt text:** Full view of the application using zoom view and displaying focus and lens statistics.
 
-The program the lens testing team currently uses is intended for direct motion capture usage and is therefore much more technically complex than what's required for basic lens testing. Our program is intended to be a lightweight and easy to use solution for the team, who'll experience the same functionality, but in a much more streamlined way.
+OptiTrack's lens testing team currently relies on a system of testing that is very dependent on the technician's prior experience in that task. That is to say, any newer technicians would have to be extensively trained by the senior ones in order to accurately grade lenses. One of the core solutions our application provides is an objective lens grade, making it both faster for lenses to be graded, as well as allowing for more inexperienced members on the lens testing team to take part. Also, the program the lens testing team currently uses is intended for direct motion capture usage and is therefore much more technically complex than what's required for basic lens testing. Our program is intended to be a lightweight and easy to use solution for the team, who'll experience the same functionality, but in a much more streamlined way.
 
 <!-- KEY FEATURES -->
 # Key Features
