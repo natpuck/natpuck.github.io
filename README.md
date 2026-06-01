@@ -71,7 +71,7 @@ OptiTrack's lens testing team currently relies on a system of testing that is ve
 <!-- INSTALLATION -->
 ### Installation
 
-1. **Clone** this repository. *⚠️Avoid placing it too deep in your file system; Windows max-path issues can break the build script.*
+1. **Clone** [this repository](https://github.com/OptiTrack/Production-Lens-Validation). *⚠️Avoid placing it too deep in your file system; Windows max-path issues can break the build script.*
 2. **Set environment variables (configure-time only)** 
      - `OPENCV_DIR = ..\opencv\build`
      - `OPENCV_BIN_DIR = ..\opencv\build\bin`
@@ -101,14 +101,14 @@ OptiTrack's lens testing team currently relies on a system of testing that is ve
 <!-- INSTALLATION -->
 ### Installation
 
-1. Clone Repository
+1. **Clone** Repository
 <br>Navigate to the directory where you want the project, then run:
     ```
     git clone https://github.com/fuzzylogic88/Production-Lens-Validation.git
     cd Production-Lens-Validation
     ```
 
-2. Build Project
+2. **Build** Project
    ```
    chmod +x build.sh
    ./build.sh ../OptiTrack_Camera_SDK_3.4.1_Final_Ubuntu
@@ -124,11 +124,11 @@ OptiTrack's lens testing team currently relies on a system of testing that is ve
        ./linuxBuild.sh ../CameraSDK --ffmpeg
        ```
 
-5. Configure network (required)
+5. **Configure** network (required)
 <br>Set the camera network interface to Link-Local Only:
 <br>`Settings → Network → Wired (camera port) → IPv4 → IPv4 Method → Link-Local Only`
 
-6. Run application
+6. **Run** application
 <br>`./build/CameraViewerApp`
 
 
